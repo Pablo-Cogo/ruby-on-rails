@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: %i[ show edit update destroy ]
+  before_action :set_state_options, only: %i[ new edit create update ]
 
   # GET /cities or /cities.json
   def index
@@ -65,6 +66,10 @@ class CitiesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def city_params
-      params.require(:city).permit(:cod, :name, :image)
+      params.require(:city).permit(:cod, :name, :image, :state_id)
+    end
+
+    def set_state_options
+      @state_options = State.all.pluck(:description, :id)
     end
 end
