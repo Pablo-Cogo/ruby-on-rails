@@ -1,3 +1,5 @@
+Primeiro projeto desenvolvido com ruby on rails.
+
 # Cheat Sheet de Ruby on Rails
 
 ## Ruby on Rails
